@@ -25,25 +25,22 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
   const closeCart = () => setIsOpen(false);
 
   useEffect(() => {
-    // Open cart modal when quantity changes.
     if (cart?.totalQuantity !== quantityRef.current) {
-      // But only if it's not already open (quantity also changes when editing items in cart).
       if (!isOpen) {
         setIsOpen(true);
       }
 
-      // Always update the quantity reference
       quantityRef.current = cart?.totalQuantity;
     }
   }, [isOpen, cart?.totalQuantity, quantityRef]);
 
   return (
     <>
-      <button aria-label="Open cart" onClick={openCart}>
+      <button aria-label="Open cart" onClick={openCart} className="cart-open-button">
         <OpenCart quantity={cart?.totalQuantity} />
       </button>
       <Transition show={isOpen}>
-        <Dialog onClose={closeCart} className="relative z-50">
+        <Dialog onClose={closeCart} className="cart-dialog relative z-50">
           <Transition.Child
             as={Fragment}
             enter="transition-all ease-in-out duration-300"
@@ -110,16 +107,13 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                               className="z-30 flex flex-row space-x-4"
                             >
                               <div className="relative h-16 w-16 cursor-pointer overflow-hidden rounded-md border border-neutral-300 bg-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800">
-                                {/* <Image
-                                  className="h-full w-full object-cover"
-                                  width={64}
-                                  height={64}
-                                  alt={
-                                    item.merchandise.product.featuredImage?.altText ||
-                                    item.merchandise.product.title
-                                  }
-                                  src={item.merchandise.product.featuredImage.url}
-                                /> */}
+                                <Image
+                                  src="/flyers.jpg"
+                                  alt="GregMMA"
+                                  width={560}
+                                  height={800}
+                                  className="rounded-lg"
+                                />
                               </div>
 
                               <div className="flex flex-1 flex-col text-base">

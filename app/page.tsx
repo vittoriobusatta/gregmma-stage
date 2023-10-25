@@ -1,8 +1,18 @@
-import { Carousel } from 'components/carousel';
-import { ThreeItemGrid } from 'components/grid/three-items';
+import { Landing } from 'components/grid/landing';
+import About from 'components/landing/about';
+import Guest from 'components/landing/guest';
+import Partners from 'components/landing/partners';
+import Program from 'components/landing/program';
+import Stage from 'components/landing/stage';
+// import Timer from 'components/landing/timer';
 import Footer from 'components/layout/footer';
+import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
+const DynamicTimer = dynamic(() => import('../components/landing/timer'), {
+  ssr: false
+  // loading: () => <p>Chargement...</p>,
+});
 export const runtime = 'edge';
 
 export const metadata = {
@@ -15,9 +25,16 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <>
-      <ThreeItemGrid />
+      <Landing />
+      <section className="content">
+        <DynamicTimer />
+        <Guest />
+        <Stage />
+        <Program />
+        <About />
+        <Partners />
+      </section>
       <Suspense>
-        <Carousel />
         <Suspense>
           <Footer />
         </Suspense>
