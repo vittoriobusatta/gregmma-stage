@@ -23,7 +23,11 @@ export function ProductDescription({
     if (searchParams) {
       const variantSelect = searchParams['ticket type'];
       const variant = product.variants.find((variant) => variant.title === variantSelect);
-      setSelectedVariant(variant);
+      if (variant !== undefined) {
+        setSelectedVariant(variant);
+      } else {
+        setSelectedVariant(null);
+      }
     }
   }, [searchParams, product.variants]);
 

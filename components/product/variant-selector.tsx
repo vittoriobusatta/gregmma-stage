@@ -66,7 +66,12 @@ export function VariantSelector({
               disabled={!isAvailableForSale}
               onClick={() => {
                 router.replace(optionUrl, { scroll: false });
-                onVariantChange(variants.find((variant) => variant.id === isAvailableForSale.id));
+                const foundVariant = variants.find(
+                  (variant) => variant.id === isAvailableForSale?.id
+                );
+                if (foundVariant) {
+                  onVariantChange(foundVariant);
+                }
               }}
               title={`${option.name} ${value}${!isAvailableForSale ? ' (Out of Stock)' : ''}`}
               className={clsx(
