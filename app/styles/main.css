@@ -121,6 +121,9 @@
   object-fit: cover;
   object-position: top;
   height: 100%;
+  @media (max-width: 768px) {
+    object-position: right;
+  }
 }
 
 .landing {
