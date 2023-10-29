@@ -6,7 +6,12 @@ import React from 'react';
 function Guest() {
   return (
     <section className="guest">
-      <div className="guest__image">
+      <div
+        className="guest__image"
+        style={{
+          justifyContent: 'flex-start'
+        }}
+      >
         <Image src="/gregmma.png" alt="gregmma" width={470} height={660} />
       </div>
       <div className="guest__details">

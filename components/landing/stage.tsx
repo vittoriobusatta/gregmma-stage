@@ -10,7 +10,12 @@ function Stage() {
           flexDirection: 'row-reverse'
         }}
       >
-        <div className="guest__image">
+        <div
+          className="guest__image"
+          style={{
+            justifyContent: 'flex-end'
+          }}
+        >
           <Image src="/cage.png" alt="cage" width={470} height={660} />
         </div>
         <div className="guest__details">

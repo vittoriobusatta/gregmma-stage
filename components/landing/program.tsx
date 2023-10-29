@@ -13,8 +13,6 @@ function Program() {
           viewBox="0 0 1188 921"
           fill="none"
           style={{
-            width: '80vw',
-            maxWidth: '1000px',
             height: 'fit-content'
           }}
         >
