@@ -37,7 +37,6 @@ export function ProductDescription({
         <h1 className="mb-2 text-5xl font-medium">{product.title}</h1>
         <div className="mr-auto w-auto rounded-full bg-blue-600 p-2 text-sm text-white">
           <Price
-            // amount={product.priceRange.maxVariantPrice.amount}
             amount={
               selectedVariant
                 ? selectedVariant.price.amount
@@ -45,6 +44,13 @@ export function ProductDescription({
             }
             currencyCode={product.priceRange.maxVariantPrice.currencyCode}
           />
+        </div>
+        <div className="mt-2 flex items-center">
+          <span className="text-sm text-neutral-500 dark:text-neutral-400">
+            {product.availableForSale
+              ? "Age minimum 16 ans accompagné d'un parent ou 18 ans"
+              : 'Rupture de stock'}
+          </span>
         </div>
       </div>
       <VariantSelector

@@ -4,14 +4,12 @@ import Guest from 'components/landing/guest';
 import Partners from 'components/landing/partners';
 import Program from 'components/landing/program';
 import Stage from 'components/landing/stage';
-// import Timer from 'components/landing/timer';
 import Footer from 'components/layout/footer';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
 const DynamicTimer = dynamic(() => import('../components/landing/timer'), {
   ssr: false
-  // loading: () => <p>Chargement...</p>,
 });
 export const runtime = 'edge';
 
