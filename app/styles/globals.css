@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Rawhide Raw 2016';
+  src:
+    url('../fonts/RawhideRaw2016.ttf') format('truetype'),
+    url('../fonts/RawhideRaw2016.woff') format('woff'),
+    url('../fonts/RawhideRaw2016.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: #10010c;
   font-family: 'Poppins', sans-serif;
