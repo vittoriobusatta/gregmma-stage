@@ -139,19 +139,19 @@
   overflow: hidden;
   @media (max-width: 768px) {
     height: 60vh;
-    & a {
-      padding: 8px 16px;
-    }
   }
   & a {
     background-color: #f25b06;
     color: #fff4be;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: clamp(14px, 1.6vw, 18px);
+    font-size: clamp(14px, 1.6vw, 16px);
     padding: 12px 26px;
-    border-radius: 40px;
+    border-radius: 10px;
     text-transform: uppercase;
+    @media (max-width: 768px) {
+      padding: 8px 16px;
+    }
   }
 }
 
@@ -410,7 +410,7 @@ nav {
   height: 16px; /* équivalent à h-4 de Tailwind */
   width: 16px; /* équivalent à w-4 de Tailwind */
   border-radius: 50%;
-  background-color: #3182ce;
+  background-color: #ff5722;
   color: #fff;
   font-size: 11px;
   font-weight: 500; /* équivalent à font-medium de Tailwind */
